@@ -1,0 +1,34 @@
+
+nav li {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+.animate {
+    height: 500px;
+}
+
+.button-bar {
+    padding-bottom: 20px;
+}
+
+.attention {
+    color: red;
+    font-weight: bolder;
+    
+}
+
+#box {
+    width: 100px;
+    height: 100px;
+    color: white;
+    text-align: center;
+    vertical-align: center;
+    background-color: black;
+    position: relative;
+    left: 50px;
+}
+
+#box img {
+    width: 100%;
+}
