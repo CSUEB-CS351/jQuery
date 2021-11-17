@@ -63,6 +63,65 @@ const setupBox = ()=> {
     })
 }
 
+
+const setupAjax = ()=> {
+    $('.loader').on('click', function() {
+        const partial_name = $(this).data('file');
+        // $(this).parent('.button-bar')
+        //     .siblings('div')
+        //     .load('partials/'+ partial_name);
+        $('#actor').load('partials/'+ partial_name);
+    })
+}
+
+const setupUI = ()=> { 
+    $('#accordion').accordion();
+    
+    const avalableTags = [
+        "ActionScript",
+        "AppleScript",
+        "Asp",
+        "BASIC",
+        "C",
+        "C++",
+        "Clojure",
+        "COBOL",
+        "ColdFusion",
+        "Erlang",
+        "Fortran",
+        "Groovy",
+        "Haskell",
+        "Java",
+        "JavaScript",
+        "Lisp",
+        "Perl",
+        "PHP",
+        "Python",
+        "Ruby",
+        "Scala",
+        "Scheme"
+    ]
+    
+    $("#tags").autocomplete({source: avalableTags})
+    $('#datepicker').datepicker();
+    
+    $('#dialog').dialog({
+        autoOpen: false,
+        show: {
+            effect: "fade",
+            duration: 1000
+        },
+        hide: {
+            effect: "explode",
+            duration: 500
+        }
+    });
+    
+    $("#dialog-wrapper button").on('click', function() {
+        $('#dialog').dialog('open');
+    })
+}
+
 $(function () {
     // $("p").hide().fadeIn(3000);
     // $("#button1").on("click", function() {
@@ -71,4 +130,6 @@ $(function () {
     
     setupArticles();
     setupBox();
+    setupAjax();
+    setupUI();
 })
